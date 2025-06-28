@@ -1,0 +1,136 @@
+** start of index.html **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Please fill out this form to help us improve our services.</p>
+
+    <form id="survey-form">
+        <fieldset>
+            <label id="name-label" for="name">Name:
+                <input id="name" type="text" placeholder="Enter your name" required>
+            </label>
+            <label id="email-label" for="email">Email:
+                <input id="email" type="email" placeholder="Enter your email" required>
+            </label>
+            <label id="number-label" for="number">Age (years):
+                <input id="number" type="number" min="13" max="120" placeholder="Enter your age">
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <label for="dropdown">Select an option:</label>
+            <select id="dropdown">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Choose one:</legend>
+            <label>
+                <input type="radio" name="choice" value="option1"> Option 1
+            </label>
+            <label>
+                <input type="radio" name="choice" value="option2"> Option 2
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Select all that apply:</legend>
+            <label>
+                <input type="checkbox" name="preferences" value="choice1"> Choice 1
+            </label>
+            <label>
+                <input type="checkbox" name="preferences" value="choice2"> Choice 2
+            </label>
+        </fieldset>
+
+        <fieldset>
+            <label for="comments">Additional comments:</label>
+            <textarea id="comments" rows="4" cols="50" placeholder="Enter your comments"></textarea>
+        </fieldset>
+
+        <button id="submit" type="submit">Submit</button>
+    </form>
+</body>
+</html>
+
+
+** end of index.html **
+
+** start of styles.css **
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-color: #1b1b32;
+    color: #f5f6f7;
+    font-family: Tahoma, sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+h1, p {
+    margin: 1em auto;
+}
+
+form {
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #0a0a23;
+    border-radius: 10px;
+}
+
+fieldset {
+    border: none;
+    padding: 1rem 0;
+    border-bottom: 3px solid #3b3b4f;
+}
+
+fieldset:last-of-type {
+    border-bottom: none;
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+input, textarea, select {
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+    background-color: #0a0a23;
+    border: 1px solid #0a0a23;
+    color: #ffffff;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3b3b4f;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #57577a;
+}
+
+** end of styles.css **
+
