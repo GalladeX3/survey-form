@@ -1,62 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Survey Form</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Survey Form</title>
+  <meta name="description" content="A simple, professional survey form with accessible, semantic HTML and responsive, modern CSS." />
+  <meta name="theme-color" content="#0ea5e9" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1 id="title">Survey Form</h1>
-    <p id="description">Please fill out this form to help us improve our services.</p>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-    <form id="survey-form">
-        <fieldset>
-            <label id="name-label" for="name">Name:
-                <input id="name" type="text" placeholder="Enter your name" required>
-            </label>
-            <label id="email-label" for="email">Email:
-                <input id="email" type="email" placeholder="Enter your email" required>
-            </label>
-            <label id="number-label" for="number">Age (years):
-                <input id="number" type="number" min="13" max="120" placeholder="Enter your age">
-            </label>
-        </fieldset>
+  <header class="site-header">
+    <h1 class="title" id="title">Survey Form</h1>
+    <p class="subtitle" id="description">Please fill out this form to help us improve our services.</p>
+  </header>
 
-        <fieldset>
-            <label for="dropdown">Select an option:</label>
-            <select id="dropdown">
-                <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-            </select>
-        </fieldset>
+  <main id="main">
+    <form id="survey-form" class="card" action="#" method="post" novalidate>
+      <!-- Contact details -->
+      <fieldset class="fieldset">
+        <legend class="legend">Your details</legend>
 
-        <fieldset>
-            <legend>Choose one:</legend>
-            <label>
-                <input type="radio" name="choice" value="option1"> Option 1
-            </label>
-            <label>
-                <input type="radio" name="choice" value="option2"> Option 2
-            </label>
-        </fieldset>
+        <div class="field">
+          <label for="name">Name <span aria-hidden="true" class="req">*</span></label>
+          <input id="name" name="name" type="text" inputmode="text" autocomplete="name" placeholder="Jane Doe" required />
+          <small class="hint" id="name-hint">Your full name.</small>
+        </div>
 
-        <fieldset>
-            <legend>Select all that apply:</legend>
-            <label>
-                <input type="checkbox" name="preferences" value="choice1"> Choice 1
-            </label>
-            <label>
-                <input type="checkbox" name="preferences" value="choice2"> Choice 2
-            </label>
-        </fieldset>
+        <div class="field">
+          <label for="email">Email <span aria-hidden="true" class="req">*</span></label>
+          <input id="email" name="email" type="email" autocomplete="email" placeholder="jane@example.com" required />
+          <small class="hint" id="email-hint">We’ll use this only to follow up on your feedback.</small>
+        </div>
 
-        <fieldset>
-            <label for="comments">Additional comments:</label>
-            <textarea id="comments" rows="4" cols="50" placeholder="Enter your comments"></textarea>
-        </fieldset>
+        <div class="field field--sm">
+          <label for="number">Age (years)</label>
+          <input id="number" name="age" type="number" inputmode="numeric" min="13" max="120" placeholder="e.g., 30" />
+        </div>
+      </fieldset>
 
-        <button id="submit" type="submit">Submit</button>
+      <!-- Topic -->
+      <fieldset class="fieldset">
+        <legend class="legend">What is this regarding?</legend>
+        <div class="field">
+          <label for="dropdown" class="visually-hidden">Topic</label>
+          <select id="dropdown" name="topic" aria-label="Topic">
+            <option value="general">General feedback</option>
+            <option value="feature">Feature request</option>
+            <option value="bug">Bug report</option>
+            <option value="support">Support question</option>
+          </select>
+        </div>
+      </fieldset>
+
+      <!-- Satisfaction -->
+      <fieldset class="fieldset">
+        <legend class="legend">Overall satisfaction</legend>
+        <div class="choices">
+          <label class="choice">
+            <input type="radio" name="satisfaction" value="very-satisfied" required />
+            <span>Very satisfied</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="satisfaction" value="satisfied" />
+            <span>Satisfied</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="satisfaction" value="neutral" />
+            <span>Neutral</span>
+          </label>
+          <label class="choice">
+            <input type="radio" name="satisfaction" value="dissatisfied" />
+            <span>Dissatisfied</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Improvements -->
+      <fieldset class="fieldset">
+        <legend class="legend">Areas for improvement (select any)</legend>
+        <div class="choices choices--grid">
+          <label class="choice">
+            <input type="checkbox" name="improve" value="performance" />
+            <span>Performance</span>
+          </label>
+          <label class="choice">
+            <input type="checkbox" name="improve" value="accessibility" />
+            <span>Accessibility</span>
+          </label>
+          <label class="choice">
+            <input type="checkbox" name="improve" value="ui" />
+            <span>UI / Design</span>
+          </label>
+          <label class="choice">
+            <input type="checkbox" name="improve" value="docs" />
+            <span>Documentation</span>
+          </label>
+          <label class="choice">
+            <input type="checkbox" name="improve" value="support" />
+            <span>Support</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <!-- Comments -->
+      <fieldset class="fieldset">
+        <legend class="legend">Additional comments</legend>
+        <div class="field">
+          <label for="comments" class="visually-hidden">Comments</label>
+          <textarea id="comments" name="comments" rows="5" placeholder="Tell us more…"></textarea>
+        </div>
+      </fieldset>
+
+      <!-- Consent -->
+      <fieldset class="fieldset">
+        <legend class="legend">Consent</legend>
+        <p class="fineprint">By submitting, you agree we may contact you about your feedback.</p>
+      </fieldset>
+
+      <div class="actions">
+        <button id="submit" class="button" type="submit">Submit feedback</button>
+      </div>
     </form>
+  </main>
+
+  <footer class="site-footer">
+    <small>Thanks for helping us improve.</small>
+  </footer>
 </body>
 </html>
