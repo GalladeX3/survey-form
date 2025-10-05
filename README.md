@@ -2,7 +2,7 @@
 
 A clean, professional survey form built with semantic, accessible HTML and modern, responsive CSS. No frameworks.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-0ea5e9)](https://<your-username>.github.io/<your-repo>/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Online-0ea5e9)](https://galladex3.github.io/survey-form/)
 
 ## Features
 - **Accessible by default:** labeled fields, groups via `<fieldset>/<legend>`, visible focus styles
